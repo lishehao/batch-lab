@@ -123,7 +123,14 @@ export default function LessonScene(props: SceneProps) {
         const x = (Math.min(...points.map(point => point.x)) + Math.max(...points.map(point => point.x))) / 2;
         const y = Math.min(...points.map(point => point.y));
         const label = labels.current?.children[index] as HTMLElement | undefined;
-        if (label) label.style.transform = `translate(${(x + 1) * w / 2}px, ${(1 - y) * h / 2 + 4}px) translateX(-50%)`;
+        if (label) {
+          // The narrow queue sits above computation; keep its label out of that transfer gap.
+          if (narrow && index === 1) {
+            const left = Math.min(...points.map(point => point.x));
+            const middle = (y + Math.max(...points.map(point => point.y))) / 2;
+            label.style.transform = `translate(${(left + 1) * w / 2 - 8}px, ${(1 - middle) * h / 2}px) translate(-100%, -50%)`;
+          } else label.style.transform = `translate(${(x + 1) * w / 2}px, ${(1 - y) * h / 2 + 4}px) translateX(-50%)`;
+        }
       });
       dirty = true;
     };
