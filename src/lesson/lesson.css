@@ -57,10 +57,10 @@ button:disabled { cursor: not-allowed; }
 .lesson-identity, .lesson-clock { flex-shrink: 0; }
 .lesson-clock { color: #2d374a; font-variant-numeric: tabular-nums; }
 .lesson-clock small { color: #747d8a; font-size: 11px; }
-.lesson-model { position: relative; height: 280px; }
+.lesson-model { position: relative; height: clamp(280px, 40vh, 370px); }
 .lesson-canvas { position: absolute; inset: 0; }
 .lesson-canvas canvas { display: block; width: 100%; height: 100%; }
-.lesson-zone-labels { position: absolute; inset: 0; color: #6a7585; font-size: 13px; text-align: center; pointer-events: none; }
+.lesson-zone-labels { position: absolute; inset: 0; color: #5d6879; font-size: 14px; font-weight: 500; text-align: center; pointer-events: none; }
 .lesson-zone-labels > span { position: absolute; left: 0; top: 0; white-space: nowrap; }
 .lesson-zone-labels span[data-active="true"] { color: var(--lesson-blue); font-weight: 650; }
 .lesson-scene-caption { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 42px; font-size: 14px; color: #687282; padding: 4px 12px; }
@@ -116,7 +116,7 @@ button:disabled { cursor: not-allowed; }
 .lesson-notes details a { display: inline-flex; align-items: center; gap: 5px; color: #315bdb; margin-bottom: 22px; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
 .lesson-footer { max-width: 1192px; margin: auto; padding: 16px 24px 28px; display: flex; justify-content: space-between; gap: 20px; color: #7b8491; font-size: 12px; }
 .lesson-footer > span > span { margin-left: 14px; }
-.lesson-scene-loading { height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: #7b8ca9; font-size: 14px; }
+.lesson-scene-loading { height: clamp(280px, 40vh, 370px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; color: #7b8ca9; font-size: 14px; }
 .lesson-flat { display: flex; align-items: stretch; justify-content: space-around; gap: 15px; padding: 45px 15px; height: 290px; }
 .lesson-flat > div { flex: 1; border-bottom: 2px solid #cbd4e4; padding: 12px; background: #eef1f5; }
 .lesson-flat strong { font-size: 14px; font-weight: 500; }
@@ -130,7 +130,7 @@ button:disabled { cursor: not-allowed; }
 .lesson-dialog p { font-size: 15px; color: #677488; margin: 14px 0; line-height: 1.85; }
 .lesson-dialog .lesson-primary { margin-top: 12px; }
 @keyframes lesson-reveal { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
-@media (min-width: 1500px) { .lesson-model { height: 390px; } .lesson-stage { padding-top: 18px; } .lesson-chapters { margin-bottom: 44px; } }
+@media (min-width: 1500px) { .lesson-model, .lesson-scene-loading { height: clamp(300px, 44vh, 470px); } .lesson-stage { padding-top: 18px; } .lesson-chapters { margin-bottom: 44px; } }
 @media (max-width: 650px) {
   .lesson-nav { height: 66px; padding: 14px 20px; gap: 10px; }
   .lesson-brand { font-size: 24px; }
@@ -147,9 +147,9 @@ button:disabled { cursor: not-allowed; }
   .lesson-exhibit-note { font-size: 11px; }
   .lesson-identity { font-size: 12px; }
   .lesson-running-label { gap: 2px 9px; font-size: 11px; }
-  .lesson-model { height: 290px; }
+  .lesson-model { height: 310px; }
   .lesson-canvas { inset: 0; }
-  .lesson-zone-labels { font-size: 12px; }
+  .lesson-zone-labels { font-size: 13px; }
   .lesson-scene-caption { min-height: 55px; font-size: 12px; padding: 8px 0; }
   .lesson-scene-caption > span:not(.lesson-mini-ticket) { max-width: 280px; }
   .lesson-caption-stat { font-size: 12px; padding: 0 11px; }
@@ -172,7 +172,7 @@ button:disabled { cursor: not-allowed; }
   .lesson-notes summary { font-size: 14px; padding: 17px 0; }
   .lesson-notes details p { font-size: 14px; }
   .lesson-footer { flex-direction: column; gap: 4px; padding: 10px 22px 25px; font-size: 11px; }
-  .lesson-scene-loading { height: 290px; }
+  .lesson-scene-loading { height: 310px; }
   .lesson-dialog { padding: 30px 24px; }
   .lesson-dialog h2 { font-size: 22px; }
 }
