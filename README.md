@@ -30,6 +30,10 @@ Real language models process inputs and generate outputs over multiple steps. Th
 
 References: [NVIDIA batching guide](https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/user_guide/batcher.html), [OpenAI Fast Mode guide](https://developers.openai.com/api/docs/guides/fast-mode), [continuous batching](https://huggingface.co/docs/transformers/continuous_batching_architecture).
 
+## Who wrote what
+
+Coding agents wrote almost all of the code. I set the direction and defined what the lesson should teach and how it should behave.
+
 ## Development
 
 Node.js 22.12 or newer is required. CI uses Node.js 24.
