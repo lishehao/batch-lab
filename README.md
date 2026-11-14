@@ -1,10 +1,12 @@
 # batch.
 
-**Why is my request waiting?** An interactive lesson about server batching.
+An interactive 3D lesson about batching, waiting, and server scheduling.
+
+**Why is my request waiting?**
 
 [Try the lesson](https://lishehao.github.io/batch-lab/)
 
-![Four independent requests sharing a round of computation](public/preview.png)
+[![Send a request, let it wait for a batch, then replay the same arrivals starting at once and compare](docs/demo-loop.gif)](https://lishehao.github.io/batch-lab/)
 
 Follow request A into a server, choose whether to start immediately or wait briefly, and replay the same arrivals with the other strategy. Compare your own completion time with the time needed to finish the entire group.
 
